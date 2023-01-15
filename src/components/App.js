@@ -1,9 +1,9 @@
 import { Routes,Route } from "react-router-dom";
-import{Navbar,Home,CreatePost,PostDetail} from './'
-// import Navbar from './Navbar';
-// import Home from './Home';
-// import CreatePost from './CreatePost';
-// import PostDetail from './PostDetail';
+// import{Navbar,Home,CreatePost,PostDetail} from './'
+import Navbar from './Navbar';
+import Home from './Home';
+import CreatePost from './CreatePost';
+import PostDetail from './PostDetail';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path='/post/:postId' element={<PostDetail/>}/>
-          <Route path='/create-path' element ={<CreatePost/>}/>
+          <Route path='/create-post' element ={<CreatePost/>}/>
         </Routes>
     </div>
     

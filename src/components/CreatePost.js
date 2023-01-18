@@ -1,7 +1,18 @@
 import { firestore } from '../firebase';
 import { useFormInput } from '../hooks';
+import styled from 'styled-components';
+// import classes from './Button.module.css';
 
-import classes from './Button.module.css';
+const StyledButton = styled.button`
+height: 33px;
+    background: #4caf50;
+    border: 0;
+    color: #fff;
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+`;
 
 function CreatePost() {
   const title = useFormInput('');
@@ -43,7 +54,7 @@ function CreatePost() {
           <textarea {...content}></textarea>
         </div>
 
-        <button className={classes.createPostBtn}>Create Post</button>
+        <StyledButton>Create Post</StyledButton>
       </form>
     </div>
   );

@@ -5,9 +5,11 @@ import Home from './Home';
 import CreatePost from './CreatePost';
 import PostDetail from './PostDetail';
 
+import { StyleRoot } from 'radium';
+
 function App() {
   return (
-    
+    <StyleRoot>
     <div className="container">
          <Navbar/>
           <Routes>
@@ -16,7 +18,7 @@ function App() {
           <Route path='/create-post' element ={<CreatePost/>}/>
         </Routes>
     </div>
-    
+    </StyleRoot>
   );
 }
 

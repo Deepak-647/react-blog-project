@@ -1,17 +1,22 @@
 import { firestore } from '../firebase';
 import { useFormInput } from '../hooks';
-import styled from 'styled-components';
+import styled,{css} from 'styled-components';
 // import classes from './Button.module.css';
 
 const StyledButton = styled.button`
-height: 33px;
-    background: #4caf50;
+    height: 33px;
+    background: ${(props) => (props.primary ? '#4caf50' : 'blue')};
     border: 0;
     color: #fff;
     padding: 8px;
     font-size: 15px;
     border-radius: 3px;
     cursor: pointer;
+    ${(props) =>
+      props.primary &&
+      css` 
+        border: 4px solid ${props.bgColor};
+      `};
 `;
 
 function CreatePost() {
@@ -54,7 +59,7 @@ function CreatePost() {
           <textarea {...content}></textarea>
         </div>
 
-        <StyledButton>Create Post</StyledButton>
+        <StyledButton primary bgColor="blue">Create Post</StyledButton>
       </form>
     </div>
   );
